@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "battles",
+  "info": {
+    "singularName": "battle",
+    "pluralName": "battles",
+    "displayName": "Battle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "match_options": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.match-options",
+      "required": true
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "match": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match",
+      "inversedBy": "battle"
+    },
+    "invited_team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "battle_invitations"
+    },
+    "is_cancelled": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "cancellation_requested_by": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "away"
+      ]
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "battle"
+    },
+    "pot_amount": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

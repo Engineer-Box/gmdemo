@@ -1,0 +1,195 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x0176E135c7e81D9c9eb35b10305F8574F94ECC18",
+      "txHash": "0x383f5cdd36ebad964951a4f6590edf3d508abcad2f5f0c28cd3b58f27d60ee0e",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "62fb0b1f3f3e36ee21da7e2c43d67113f64f2c69b49ca7209eb091c6d4690964": {
+      "address": "0xAFd774625D2042E3D0175e7E01c40f556c5209Db",
+      "txHash": "0x957f00e0dcde4eae985d81818120fd03cb05f3efc42d3f2cfe9d39bafde53328",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "USDC",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1898",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:12"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint64,t_struct(Transaction)1523_storage)",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:23"
+          },
+          {
+            "label": "transactionIds",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_uint64)dyn_storage",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:24"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)64_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)190_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_uint64)dyn_storage": {
+            "label": "uint64[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1898": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_enum(TransactionType)1513": {
+            "label": "enum Gamerly.TransactionType",
+            "members": [
+              "Deposit",
+              "Withdraw"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_uint64,t_struct(Transaction)1523_storage)": {
+            "label": "mapping(uint64 => struct Gamerly.Transaction)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Transaction)1523_storage": {
+            "label": "struct Gamerly.Transaction",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "profileAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "transactionType",
+                "type": "t_enum(TransactionType)1513",
+                "offset": 20,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

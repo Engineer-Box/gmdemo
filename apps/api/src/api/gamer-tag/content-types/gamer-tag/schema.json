@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gamer_tags",
+  "info": {
+    "singularName": "gamer-tag",
+    "pluralName": "gamer-tags",
+    "displayName": "Gamer Tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::game.game",
+      "inversedBy": "gamer_tags"
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "gamer_tags"
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

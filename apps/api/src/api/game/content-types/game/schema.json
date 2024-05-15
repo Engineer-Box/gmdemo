@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "Game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "card_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "regex": "^[a-zA-Z0-9_-]+$",
+      "unique": true,
+      "required": true
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team",
+      "mappedBy": "game"
+    },
+    "gamer_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gamer-tag.gamer-tag",
+      "mappedBy": "game"
+    },
+    "custom_attributes": {
+      "type": "dynamiczone",
+      "components": [
+        "custom-attributes.pick-random",
+        "custom-attributes.select"
+      ]
+    },
+    "max_team_size": {
+      "type": "integer",
+      "unique": false,
+      "required": true,
+      "default": 4
+    },
+    "square_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "rules_url": {
+      "type": "string"
+    },
+    "favourited_by": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profile.profile",
+      "mappedBy": "favourite_games"
+    }
+  }
+}

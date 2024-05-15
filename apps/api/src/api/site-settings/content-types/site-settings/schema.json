@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settingses",
+  "info": {
+    "singularName": "site-settings",
+    "pluralName": "site-settingses",
+    "displayName": "Site Settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maintenance": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

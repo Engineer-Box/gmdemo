@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "fee_trackers",
+  "info": {
+    "singularName": "fee-tracker",
+    "pluralName": "fee-trackers",
+    "displayName": "Fee Tracker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collected_fees": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

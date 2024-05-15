@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "remove-node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "build:web": "turbo run build --filter web",
+    "build:api": "turbo run build --filter api",
+    "start:web": "turbo run start --filter web",
+    "start:api": "turbo run start --filter api"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "tsconfig": "*",
+    "turbo": "^1.11.2"
+  },
+  "name": "gamerly",
+  "packageManager": "yarn@1.22.19",
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ],
+    "nohoist": [
+      "**/contract",
+      "**/contract/**",
+      "**/api",
+      "**/api/**",
+      "**/web",
+      "**/web/**",
+      "**/@strapi/",
+      "**/@strapi/**",
+      "**/date-fns/",
+      "**/date-fns/**",
+      "**/@strapi/utils",
+      "**/@strapi/utils/**"
+    ]
+  }
+}

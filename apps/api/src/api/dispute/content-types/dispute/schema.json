@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disputes",
+  "info": {
+    "singularName": "dispute",
+    "pluralName": "disputes",
+    "displayName": "dispute",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "match": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match",
+      "mappedBy": "dispute"
+    },
+    "resolution_summary": {
+      "type": "richtext"
+    },
+    "resolved_winner": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "away"
+      ]
+    }
+  }
+}

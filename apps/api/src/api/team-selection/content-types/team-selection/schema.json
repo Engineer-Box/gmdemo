@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_selections",
+  "info": {
+    "singularName": "team-selection",
+    "pluralName": "team-selections",
+    "displayName": "Team Selection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "team_selection_profiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-selection-profile.team-selection-profile",
+      "mappedBy": "team_selection"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "team_selections"
+    },
+    "home_match": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match",
+      "mappedBy": "home_team"
+    },
+    "away_match": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match",
+      "mappedBy": "away_team"
+    },
+    "earnings": {
+      "type": "integer"
+    },
+    "xp": {
+      "type": "integer"
+    },
+    "did_win": {
+      "type": "boolean"
+    }
+  }
+}

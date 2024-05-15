@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_custom_attributes_pick_randoms",
+  "info": {
+    "displayName": "Pick Random",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.custom-attribute-option",
+      "required": true
+    },
+    "attribute": {
+      "displayName": "Custom Attribute",
+      "type": "component",
+      "repeatable": false,
+      "component": "general.custom-attribute",
+      "required": true
+    }
+  }
+}

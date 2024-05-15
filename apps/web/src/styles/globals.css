@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-color-primary: theme("colors.brand.primary.DEFAULT");
+    --brand-color-primary-dark: theme("colors.brand.primary.dark");
+    --brand-color-navy: theme("colors.brand.navy.DEFAULT");
+    --brand-color-navy-accent-light: theme("colors.brand.navy.accent-light");
+    --brand-color-navy-accent-dark: theme("colors.brand.navy.accent-dark");
+    --brand-color-navy-light: theme("colors.brand.navy.light.DEFAULT");
+    --brand-color-navy-light-accent-light: theme(
+      "colors.brand.navy.accent-light"
+    );
+  }
+}
+
+/* Global styles, easy to override */
+@layer base {
+  * {
+    scrollbar-gutter: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+      position: absolute;
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: var(--brand-color-navy);
+    }
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    font-family: "Inter", sans-serif;
+  }
+
+  #__next {
+    height: 100%;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+/* Component styles, hard to override */
+@layer components {
+  .scroll-light {
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--brand-color-navy-accent-light);
+    }
+  }
+  .scroll-dark {
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--brand-color-navy-accent-dark);
+    }
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-3 px-4 py-2 border-2 border-transparent rounded;
+  }
+}

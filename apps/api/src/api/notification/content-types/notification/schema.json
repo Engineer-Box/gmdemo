@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "singularName": "notification",
+    "pluralName": "notifications",
+    "displayName": "Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "TEAM_INVITE_RECEIVED",
+        "TRANSACTION_RESULT",
+        "ENROLLED_IN_BATTLE",
+        "BATTLE_INVITE_RECEIVED",
+        "BATTLE_CONFIRMED",
+        "CHALLENGE_INVITE_DECLINED",
+        "DESCRIPTIVE",
+        "REDIRECT"
+      ],
+      "required": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "notifications"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
+    },
+    "seen": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "transaction_result_details": {
+      "type": "json"
+    },
+    "enrolled_in_battle_details": {
+      "type": "json"
+    },
+    "battle_invite_received_details": {
+      "type": "json"
+    },
+    "battle_confirmed_details": {
+      "type": "json"
+    },
+    "challenge_invite_declined_details": {
+      "type": "json"
+    },
+    "descriptive_details": {
+      "type": "json"
+    },
+    "redirect_details": {
+      "type": "json"
+    }
+  }
+}

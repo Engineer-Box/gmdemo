@@ -1,0 +1,220 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x2AbfDAD8F243d4420E118182Bb4C51174527173B",
+      "txHash": "0x8196defd18eddc92221a1e24d0b3bbb765aec655e37096bc6248414424ac1f54",
+      "kind": "uups"
+    },
+    {
+      "address": "0x7BF497E963F934Ed39605EF0Ac497067826cc21f",
+      "txHash": "0xb469b4104360afbff0e49848ba879ec1843a0c5fb17afb95d7786046a5142445",
+      "kind": "uups"
+    },
+    {
+      "address": "0x6E2fF9193ffa4C4798CE814792e29DF8E73291Aa",
+      "txHash": "0x3e974ed0716b367ce93f1ccdaa46b09451f01a945a4529680fcbc9330a5b6ce9",
+      "kind": "uups"
+    },
+    {
+      "address": "0xE370549b6694388B4f46b8F974059ABb0fEB6e30",
+      "txHash": "0xe18a0b6a33a966bca2be38c01fa67e1866bb2a028dd9a87a8f53fee757826afd",
+      "kind": "uups"
+    },
+    {
+      "address": "0x2E4807e6Db3cD8D5916d70e5b4F062978a6DB924",
+      "txHash": "0x2782e8336f152ccf608471416b3c7458f2e7abc6a72a8f7921c5fceb45fb1ba6",
+      "kind": "uups"
+    },
+    {
+      "address": "0x5222569067084bD49fFD56a801158eF63988C7FC",
+      "txHash": "0x4eff0dc406deddbf21eb555e2ef98749828a3919fbd3c1f573e4b50af2b601ca",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "62fb0b1f3f3e36ee21da7e2c43d67113f64f2c69b49ca7209eb091c6d4690964": {
+      "address": "0x55820b952CA959d5254C0e1caE939570b6858A47",
+      "txHash": "0x55fba5ec4e5edbb5d8da61f2cc268430a31f1229eed2e9aee3679b856e730a83",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "USDC",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1898",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:12"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint64,t_struct(Transaction)1523_storage)",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:23"
+          },
+          {
+            "label": "transactionIds",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_uint64)dyn_storage",
+            "contract": "Gamerly",
+            "src": "contracts/Gamerly.sol:24"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)64_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)14_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)190_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_uint64)dyn_storage": {
+            "label": "uint64[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1898": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_enum(TransactionType)1513": {
+            "label": "enum Gamerly.TransactionType",
+            "members": [
+              "Deposit",
+              "Withdraw"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_uint64,t_struct(Transaction)1523_storage)": {
+            "label": "mapping(uint64 => struct Gamerly.Transaction)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Transaction)1523_storage": {
+            "label": "struct Gamerly.Transaction",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "profileAddress",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "transactionType",
+                "type": "t_enum(TransactionType)1513",
+                "offset": 20,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

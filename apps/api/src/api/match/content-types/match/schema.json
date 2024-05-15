@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matches",
+  "info": {
+    "singularName": "match",
+    "pluralName": "matches",
+    "displayName": "Match",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "match_meta": {
+      "type": "json"
+    },
+    "battle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::battle.battle",
+      "mappedBy": "match"
+    },
+    "home_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team-selection.team-selection",
+      "inversedBy": "home_match"
+    },
+    "away_team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team-selection.team-selection",
+      "inversedBy": "away_match"
+    },
+    "result": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "away"
+      ]
+    },
+    "home_team_vote": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "away"
+      ]
+    },
+    "away_team_vote": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "away"
+      ]
+    },
+    "dispute": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dispute.dispute",
+      "inversedBy": "match"
+    },
+    "last_vote_date": {
+      "type": "datetime"
+    },
+    "completed_date": {
+      "type": "datetime"
+    }
+  }
+}

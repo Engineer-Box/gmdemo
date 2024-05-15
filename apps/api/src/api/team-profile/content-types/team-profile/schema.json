@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_profiles",
+  "info": {
+    "singularName": "team-profile",
+    "pluralName": "team-profiles",
+    "displayName": "Team Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "is_pending": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "founder",
+        "member",
+        "leader"
+      ],
+      "required": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "team_profiles"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "team_profiles"
+    },
+    "invited_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profile.profile"
+    },
+    "gamer_tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gamer-tag.gamer-tag"
+    },
+    "team_selection_profiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-selection-profile.team-selection-profile",
+      "mappedBy": "team_profile"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wallet_address": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "region": {
+      "type": "enumeration",
+      "enum": [
+        "Europe",
+        "North America",
+        "Asia",
+        "Oceania"
+      ],
+      "required": false
+    },
+    "username": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 20
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wager_mode": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "trust_mode": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "bio": {
+      "type": "text",
+      "required": false
+    },
+    "team_profiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-profile.team-profile",
+      "mappedBy": "profile"
+    },
+    "notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notification.notification",
+      "mappedBy": "profile"
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "profile"
+    },
+    "balance": {
+      "type": "integer",
+      "default": 0
+    },
+    "gamer_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gamer-tag.gamer-tag",
+      "mappedBy": "profile"
+    },
+    "social_links": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.social-links"
+    },
+    "vouched_by": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profile.profile",
+      "inversedBy": "vouched_for"
+    },
+    "vouched_for": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profile.profile",
+      "mappedBy": "vouched_by"
+    },
+    "favourite_games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "inversedBy": "favourited_by"
+    },
+    "suspended": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

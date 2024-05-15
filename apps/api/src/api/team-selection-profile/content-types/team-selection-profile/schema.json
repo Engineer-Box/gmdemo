@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_selection_profiles",
+  "info": {
+    "singularName": "team-selection-profile",
+    "pluralName": "team-selection-profiles",
+    "displayName": "Team Selection Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "is_captain": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "team_profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team-profile.team-profile",
+      "inversedBy": "team_selection_profiles"
+    },
+    "team_selection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team-selection.team-selection",
+      "inversedBy": "team_selection_profiles"
+    },
+    "earnings": {
+      "type": "integer"
+    },
+    "xp": {
+      "type": "integer"
+    },
+    "did_win": {
+      "type": "boolean"
+    }
+  }
+}

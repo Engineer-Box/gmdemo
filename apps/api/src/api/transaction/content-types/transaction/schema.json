@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["deposit", "withdraw", "in", "out"],
+      "required": true
+    },
+    "amount": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "transactions"
+    },
+    "txHash": {
+      "type": "string",
+      "unique": true,
+      "required": false,
+      "private": true
+    },
+    "createdSinceBlockNumber": {
+      "type": "biginteger",
+      "private": true
+    },
+    "onChainSinceBlockNumber": {
+      "type": "biginteger",
+      "private": true
+    },
+    "battle": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::battle.battle",
+      "inversedBy": "transactions"
+    }
+  }
+}

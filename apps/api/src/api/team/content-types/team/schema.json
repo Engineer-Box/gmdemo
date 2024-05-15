@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::game.game",
+      "inversedBy": "teams"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "team_profiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-profile.team-profile",
+      "mappedBy": "team"
+    },
+    "battle_invitations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::battle.battle",
+      "mappedBy": "invited_team"
+    },
+    "team_selections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-selection.team-selection",
+      "mappedBy": "team"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

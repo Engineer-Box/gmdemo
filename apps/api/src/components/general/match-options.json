@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_general_match_options",
+  "info": {
+    "displayName": "Match Options",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "custom_attribute_inputs": {
+      "type": "json"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game.game"
+    },
+    "team_size": {
+      "type": "integer",
+      "required": true
+    },
+    "series": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "region": {
+      "type": "enumeration",
+      "enum": [
+        "Europe",
+        "North America",
+        "Asia",
+        "Oceania"
+      ]
+    }
+  }
+}

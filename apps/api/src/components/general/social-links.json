@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_general_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "discord": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    }
+  }
+}

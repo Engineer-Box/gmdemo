@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_custom_attributes_selects",
+  "info": {
+    "displayName": "Select",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "attribute": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.custom-attribute",
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.custom-attribute-option"
+    },
+    "input_type": {
+      "type": "enumeration",
+      "enum": [
+        "dropdown",
+        "radio",
+        "multi-select"
+      ],
+      "required": true,
+      "default": "dropdown"
+    }
+  }
+}

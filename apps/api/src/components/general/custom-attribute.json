@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_general_custom_attributes",
+  "info": {
+    "displayName": "Custom Attribute",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "attribute_id": {
+      "type": "string",
+      "required": true
+    },
+    "display_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

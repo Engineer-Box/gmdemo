@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_general_devices",
+  "info": {
+    "displayName": "Device"
+  },
+  "options": {},
+  "attributes": {
+    "device": {
+      "type": "enumeration",
+      "enum": [
+        "PC",
+        "Console"
+      ],
+      "required": true
+    }
+  }
+}
